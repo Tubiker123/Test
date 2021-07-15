@@ -32,7 +32,7 @@ _G.inputBeganConnection = nil;
 _G.childAddedConnection = nil; 
 
 _G.keyForSpam = "N"; --Change key to your liking (optional)
-_G.keyForEsp = "V"; -- Change key to your liking (optional)
+_G.keyForEsp = "C"; -- Change key to your liking (optional)
 _G.trinketKey = "P" -- Change key to your liking (optional)
 
 _G.cooldown = .45 
@@ -215,10 +215,10 @@ _G.inputBeganConnection = inputService.InputBegan:Connect(function(input, gpe)
     if input.KeyCode == Enum.KeyCode[_G.keyForSpam] then
         if _G.check == false then 
             _G.check = true
-            notify("Infinite breathing", "Infinite breathing was enabled!", 2.4)
+            notify("Thở vô hạn", "Thở vô hạn đã được bật!", 2.4)
         else 
             _G.check = false
-            notify("Infinite breathing", "Infinite breathing was disabled!", 2.4)
+            notify("Thở vô hạn", "Thở vô hạn đã được tắt!", 2.4)
         end 
         
     elseif input.KeyCode == Enum.KeyCode[_G.keyForEsp] then 
@@ -238,21 +238,21 @@ _G.inputBeganConnection = inputService.InputBegan:Connect(function(input, gpe)
                     end 
                 end 
             end
-            notify("ESP", "Mobs ESP was Enabled!", 1.5) 
+            notify("ESP", "Mobs ESP đã được bật!", 1.5) 
         else 
             _G.childAddedConnection:Disconnect()
             _G.childAddedConnection = nil
             removeEsp()
-            notify("ESP", "Mobs ESP was disabled!", 1.5) 
+            notify("ESP", "Mobs ESP đã được tắt!", 1.5) 
         end
     elseif input.KeyCode == Enum.KeyCode[_G.trinketKey] then
          if _G.trinketToggle == false then 
             _G.trinketToggle = true 
-            notify("Trinket farm", "enabled! wait for it to load it will go fast dont worry. Risk of losing items if you leave!", 2.5) 
+            notify("Trinket farm", "đã được bật! đợi nó tải , đừng lo lắng. Nguy cơ mất đồ nếu bạn thoát game!", 2.5) 
         else
             _G.trinketToggle = false 
             disableNoclip = true 
-            notify("Trinket farm", "disabled!", 1.5) 
+            notify("Trinket farm", "đã được tắt", 1.5) 
         end 
     end 
 end);
